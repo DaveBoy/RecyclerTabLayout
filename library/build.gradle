@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION as int
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion MIN_SDK_VERSION as int
-        targetSdkVersion TARGET_SDK_VERSION as int
-        versionCode VERSION_CODE as int
-        versionName VERSION_NAME
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 17
+        versionName "1.5.1"
     }
     buildTypes {
         release {
@@ -19,16 +19,6 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
-    compile "com.android.support:recyclerview-v7:$SUPPORT_LIB_VERSION"
-}
-
-publish {
-    userOrg = POM_DEVELOPER_ID
-    groupId = GROUP
-    artifactId = ARTIFACT_ID
-    uploadName = ARTIFACT_NAME
-    publishVersion = VERSION_NAME
-    desc = POM_DESCRIPTION
-    website = POM_URL
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation "androidx.recyclerview:recyclerview:1.1.0-beta03"
 }
